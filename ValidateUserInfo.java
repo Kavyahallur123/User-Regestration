@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -72,6 +71,19 @@ public class ValidateUserInfo {
         } else {
             System.out.println("Mobile Number is invalid. Enter Again: ");
             checkMobileNumber();
+        }
+    }
+
+    // Method Checking Password Rule 2 atleast one upper case
+    public void checkPassword() {
+        System.out.println("Enter the Password : ");
+        String password = scan.nextLine();
+        // Checking pattern with Password
+        if (Pattern.matches("^[a-z](?=.*[A-Z]).{8,}$", password)) {
+            System.out.println("Password is valid");
+        } else {
+            System.out.println("Password is invalid. Enter Again: ");
+            checkPassword();
         }
     }
 }
